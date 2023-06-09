@@ -1,7 +1,7 @@
 from graphics import Canvas
 import time
 import random
-    
+####################### All the constants ############    
 CANVAS_WIDTH = 500
 CANVAS_HEIGHT = 500
 DISTANCE_X = (CANVAS_WIDTH/10)+10
@@ -12,8 +12,8 @@ SIZE = 20
 MAX_VALUE=CANVAS_WIDTH-SIZE
 SNAKE_LENGTH = 20
 
-LEVEL_UP_SCORE=50
-MAX_LEVEL=5
+LEVEL_UP_SCORE=50  # seting the value after which the level should increase
+MAX_LEVEL=5     #when you are at max level play until the game gets over
 
 START_X = 0
 START_Y = 0
@@ -470,6 +470,11 @@ def main():
         color="red", 
         font="Courier", 
         font_size=15)
+    text7=canvas.create_text(50, 290,
+        "# Score 50 to level up", 
+        color="red", 
+        font="Courier", 
+        font_size=15)
         
     #deletes instructions and start the game when pressed enter
     while True:
@@ -483,6 +488,7 @@ def main():
             canvas.delete(text4)
             canvas.delete(text5)
             canvas.delete(text6)
+            canvas.delete(text7)
             canvas.delete(start)
             canvas.delete(background)
             #starting the game
